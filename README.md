@@ -87,6 +87,9 @@ tooltips and discards scrolling data when necessary.
 
 ### Transparency Modification
 
+> [!NOTE]  
+> Removed from Minecraft 1.21.2 onwards as the tooltip background can now be customized with resource packs.
+
 You may be bothered that tooltips may obstruct the view of the next few items in your inventory, this
 fix aims to mitigate that by allowing you to adjust the transparency of the tooltip, allowing you to
 decide what's best for in terms of visibility and transparency.

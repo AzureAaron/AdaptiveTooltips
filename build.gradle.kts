@@ -20,6 +20,8 @@ repositories {
     maven("https://maven.terraformersmc.com/releases")
     maven("https://maven.quiltmc.org/repository/release")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
+    maven("https://maven.parchmentmc.org")
+    maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
 }
 
 val minecraftVersion = libs.versions.minecraft.get()
@@ -27,14 +29,16 @@ val minecraftVersion = libs.versions.minecraft.get()
 dependencies {
     minecraft(libs.minecraft)
     mappings(loom.layered {
-        mappings("org.quiltmc:quilt-mappings:$minecraftVersion+build.${libs.versions.quilt.mappings.get()}:intermediary-v2")
         officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-$minecraftVersion:${libs.versions.parchment.mappings.get()}@zip")
     })
     modImplementation(libs.fabric.loader)
 
     modImplementation(libs.fabric.api)
     modImplementation(libs.yacl)
     modImplementation(libs.mod.menu)
+
+    modRuntimeOnly(libs.devauth)
 }
 
 tasks {

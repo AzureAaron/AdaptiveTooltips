@@ -18,7 +18,17 @@ public class MouseMixin {
 
     @WrapWithCondition(method = "onScroll", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/Screen;mouseScrolled(DDDD)Z"))
     private boolean trackMouseWheel(Screen screen, double mouseX, double mouseY, double horizontalAmount, double verticalAmount, long window, double horizontal, double vertical) {
-        if (InputConstants.isKeyDown(minecraft.getWindow().getWindow(), AdaptiveTooltipConfig.HANDLER.instance().scrollKeyCode)) {
+        if (AdaptiveTooltipConfig.HANDLER.instance().requireScrollKey) {
+            if (InputConstants.isKeyDown(minecraft.getWindow().getWindow(), AdaptiveTooltipConfig.HANDLER.instance().scrollKeyCode)) {
+                if (InputConstants.isKeyDown(minecraft.getWindow().getWindow(), AdaptiveTooltipConfig.HANDLER.instance().horizontalScrollKeyCode)) {
+                    ScrollTracker.addHorizontalScroll((int) Math.signum(vertical));
+                } else {
+                    ScrollTracker.addVerticalScroll((int) Math.signum(vertical));
+                    ScrollTracker.addHorizontalScroll((int) Math.signum(horizontal));
+                }
+                return false;
+            }
+        } else {
             if (InputConstants.isKeyDown(minecraft.getWindow().getWindow(), AdaptiveTooltipConfig.HANDLER.instance().horizontalScrollKeyCode)) {
                 ScrollTracker.addHorizontalScroll((int) Math.signum(vertical));
             } else {

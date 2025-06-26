@@ -78,6 +78,11 @@ public class AdaptiveTooltipConfig {
     private final Component scrollingGuide = Component.translatable("adaptivetooltips.label.scrolling_instructions");
 
     @AutoGen(category = CATEGORY, group = SCROLLING)
+    @TickBox
+    @SerialEntry
+    public boolean requireScrollKey = false;
+
+    @AutoGen(category = CATEGORY, group = SCROLLING)
     @KeyCode
     @SerialEntry
     public int scrollKeyCode = InputConstants.KEY_LALT;

@@ -1,17 +1,19 @@
 [versions]
-loom = "1.8.+"
+loom = "1.10.+"
 
 minotaur = "2.8.+"
 cursegradle = "2.+"
 github_release = "2.+"
 machete = "2.+"
 
-minecraft = "1.21.3"
-quilt_mappings = "1"
-fabric_loader = "0.16.7"
-fabric_api = "0.106.1+1.21.3"
-yacl = "3.6.1+1.21.2-fabric"
-mod_menu = "12.0.0-beta.1"
+minecraft = "1.21.6"
+parchment_mappings = "2025.06.15"
+fabric_loader = "0.16.14"
+fabric_api = "0.128.0+1.21.6"
+yacl = "3.7.1+1.21.6-fabric"
+mod_menu = "15.0.0-beta.3"
+
+devauth = "1.2.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
@@ -20,6 +22,8 @@ fabric_loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric_l
 fabric_api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric_api" }
 yacl = { module = "dev.isxander:yet-another-config-lib", version.ref = "yacl" }
 mod_menu = { module = "com.terraformersmc:modmenu", version.ref = "mod_menu" }
+
+devauth = {module = "me.djtheredstoner:DevAuth-fabric", version.ref = "devauth" }
 
 [plugins]
 loom = { id = "fabric-loom", version.ref = "loom" }

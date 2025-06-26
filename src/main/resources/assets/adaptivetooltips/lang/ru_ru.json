@@ -26,6 +26,8 @@
   "adaptivetooltips.group.scrolling.title": "Прокрутка",
   "adaptivetooltips.group.scrolling.desc": "Настройка управления прокруткой.",
   "adaptivetooltips.label.scrolling_instructions": "Удерживайте \"%s\" при наведении на подсказку для её прокрутки вращением вверх/вниз (по вертикали) или влево/вправо (по горизонтали). В качестве альтернативы для горизонтальной прокрутки можно дополнительно зажать \"%s\".",
+  "yacl3.config.adaptivetooltips:config.requireScrollKey": "Require Scroll Key",
+  "yacl3.config.adaptivetooltips:config.requireScrollKey.desc": "Requires holding a set key to allow scrolling tooltips.",
   "yacl3.config.adaptivetooltips:config.scrollKeyCode": "Scroll Key Code",
   "yacl3.config.adaptivetooltips:config.scrollKeyCode.desc": "Key code to hold to allow scrolling tooltips.",
   "yacl3.config.adaptivetooltips:config.horizontalScrollKeyCode": "Horizontal Scroll Key Code",
